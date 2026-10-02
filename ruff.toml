@@ -1,0 +1,2 @@
+[lint.pydocstyle]
+convention = "numpy"
