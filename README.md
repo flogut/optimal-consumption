@@ -3,16 +3,17 @@
 This repository implements the numerical scheme from Gutekunst, Herdegen, and Hobson [1] for computing the optimal investment and consumption policies in a stochastic factor model.
 
 The risky asset $S$ and factor $Y$ follow 
-$$
+```math
 \begin{aligned}
     \frac{dS_t}{S_t} &= \left( r(Y_t) + \lambda(Y_t) \sigma(Y_t) \right) dt + \sigma(Y_t) dW_t, \\
     dY_t &= a(Y_t) dt + b(Y_t) d\tilde{W}_t
 ,\end{aligned}
-$$ 
+``` 
 where $W$ and $\tilde{W}$ are Brownian motions with correlation $\rho$. 
-The investor chooses the fraction $\Pi$ of wealth $X$ invested in the risky asset and the consumption-to-wealth rate $\Xi$ to maximise $$
-V(x,y) = \sup_{(\Pi,\Xi)} \mathbb{E}\left[ \int_0^\infty \exp\left(-\int_0^t\delta(Y_s)ds\right) \frac{(\Xi_t X_t)^{1-R}}{1-R}dt \,\middle|\,X_0=x, Y_0=y \right]
-.$$
+The investor chooses the fraction $\Pi$ of wealth $X$ invested in the risky asset and the consumption-to-wealth rate $\Xi$ to maximise 
+```math
+V(x,y) = \sup_{(\Pi,\Xi)} \mathbb{E}\left[ \int_0^\infty \exp\left(-\int_0^t\delta(Y_s)ds\right) \frac{(\Xi_t X_t)^{1-R}}{1-R}dt \,\middle|\,X_0=x, Y_0=y \right].
+```
 
 The implementation is provided in [`optimal_consumption.py`](optimal_consumption.py).
 
